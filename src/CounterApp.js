@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 
 import { count } from './reducers';
 import Counter from './containers/CounterContainer';
-
+import Display from './containers/DisplayContainer';
 
 const rootReducer = combineReducers({
     count
@@ -28,6 +28,22 @@ window.store = store;
 function CounterApp() {
     return (
         <Provider store={store}>
+            <Counter />
+            <h2>
+                <Display />    
+            </h2>
+            <h3>
+                <Display />    
+            </h3>
+            <h4>
+                <Display />    
+            </h4>
+            <h5>
+                <Display />    
+            </h5>
+            <h6>
+                <Display />    
+            </h6>
             <Counter />
         </Provider>
     );
