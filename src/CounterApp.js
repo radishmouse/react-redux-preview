@@ -25,38 +25,46 @@ store.subscribe(async () => {
 window.store = store;
 // NAUGHTY! DO NOT SHIP TO PRODUCTION!
 
+function r4nge(to=10, from=0, by=1) {
+    const result = [];
+    if (from < to) {
+        for (let i=from; i<=to; i+=by) {
+            result.push(i);
+        }
+    } else {
+        for (let i=from; i>to; i-=by) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+const defaultFactor = .19;
+const howMany = 25;
+const beginning = 0;
+const step = 3;
+const end = step * howMany;
+
+
+function scaleBy(howMuch, factor=defaultFactor) {
+    return ({
+        transform: `
+            scale(${howMuch * factor})            
+        `
+    });
+}
+
 function CounterApp() {
     return (
         <Provider store={store}>
+                {
+                    r4nge(beginning, end, step).map(i => <div style={scaleBy(i)}><Display /></div>)
+                }
             <Counter />
-            <h2>
-                <Display />    
-            </h2>
-            <h3>
-                <Display />    
-            </h3>
-            <h4>
-                <Display />    
-            </h4>
-            <h5>
-                <Display />    
-            </h5>
-            <h6>
-                <Display />    
-            </h6>
-            <h5>
-                <Display />    
-            </h5>
-            <h4>
-                <Display />    
-            </h4>
-            <h3>
-                <Display />    
-            </h3>
-            <h2>
-                <Display />    
-            </h2>            
-            <Counter />
+                {
+                    r4nge(end, beginning, step).map(i => <div style={scaleBy(i)}><Display /></div>)
+                }
+
+
         </Provider>
     );
 

@@ -28,7 +28,8 @@ html, body {
   text-align: center;
 }
 div#root {
-  width: 100%;  
+  width: 100%;
+  overflow: hidden;
 }
 
 button {
@@ -37,8 +38,8 @@ button {
   background: black;
   border: none;
 }
-button:active {
-
+button:focus {
+  outline: 0;
 }
 h1 {
   font-size: 5em;    
@@ -50,5 +51,5 @@ h1 {
 h2 {font-size: 2em}
 h3 {font-size: .99em}
 h4 {font-size: .66em}
-h5 {font-size: .33em}
-h6 {font-size: .1em}
+h5 {font-size: .99em}
+h6 {font-size: 2em}
