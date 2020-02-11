@@ -44,6 +44,18 @@ function CounterApp() {
             <h6>
                 <Display />    
             </h6>
+            <h5>
+                <Display />    
+            </h5>
+            <h4>
+                <Display />    
+            </h4>
+            <h3>
+                <Display />    
+            </h3>
+            <h2>
+                <Display />    
+            </h2>            
             <Counter />
         </Provider>
     );
